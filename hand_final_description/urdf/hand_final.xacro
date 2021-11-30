@@ -1,0 +1,1073 @@
+<?xml version="1.0" ?>
+<robot name="hand_final" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find hand_final_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find hand_final_description)/urdf/hand_final.trans" />
+<xacro:include filename="$(find hand_final_description)/urdf/hand_final.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 0.001 0.0"/>
+    <mass value="0.123088"/>
+    <inertia ixx="6.6e-05" ixy="0.0" ixz="0.0" iyy="0.000164" iyz="-0.0" izz="9.9e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="s_mcp_yaw_link_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-4.6768596833245135e-05 0.0012359787607253239 -0.0005345675075667244"/>
+    <mass value="0.011430485562037091"/>
+    <inertia ixx="2e-06" ixy="0.0" ixz="-0.0" iyy="3e-06" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.039 -0.002 -0.0175"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/s_mcp_yaw_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.039 -0.002 -0.0175"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/s_mcp_yaw_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="s_mcp_pitch_link_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.04274093891233175 0.007616616913173875 0.017740872570661995"/>
+    <mass value="0.028244047864773934"/>
+    <inertia ixx="6e-06" ixy="0.0" ixz="-0.0" iyy="6e-06" iyz="0.0" izz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.002 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/s_mcp_pitch_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.002 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/s_mcp_pitch_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="connector_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0460411002627318 0.004250000000000006 -0.00563800271492397"/>
+    <mass value="0.00374307805216622"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.007 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/connector_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.007 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/connector_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="s_pip_pitch_link_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0011870146943421048 -0.0010075159640330691 -0.017965272866855432"/>
+    <mass value="0.03418494281236667"/>
+    <inertia ixx="8e-06" ixy="0.0" ixz="-0.0" iyy="9e-06" iyz="-0.0" izz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.04545 -0.01125 0.056218"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/s_pip_pitch_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.04545 -0.01125 0.056218"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/s_pip_pitch_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="connector_v1_2">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.03803170676576143 0.004250000000000058 -0.057489801230574816"/>
+    <mass value="0.00374307805216622"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="-0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.0005 -0.007 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/connector_v1_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.0005 -0.007 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/connector_v1_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="s_dip_link_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.011935747474570657 -0.0005341031947518112 -0.004476997951630715"/>
+    <mass value="0.019676387057467354"/>
+    <inertia ixx="1e-06" ixy="0.0" ixz="0.0" iyy="2e-06" iyz="0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.03794 -0.01125 0.10807"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/s_dip_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.03794 -0.01125 0.10807"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/s_dip_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="connector_v1_3">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.04079775607720053 0.004250000000000064 -0.1153908633809602"/>
+    <mass value="0.00374307805216622"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.007 0.011"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/connector_v1_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.007 0.011"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/connector_v1_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="s_tip_link_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.011935796786009763 -0.0005341031947518338 -0.004477060102016067"/>
+    <mass value="0.019676387057467354"/>
+    <inertia ixx="1e-06" ixy="0.0" ixz="0.0" iyy="2e-06" iyz="0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.040206 -0.01125 0.133971"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/s_tip_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.040206 -0.01125 0.133971"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/s_tip_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="cmc_link_v4_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.00048645427795625945 0.004769447524329839 6.493517695750628e-06"/>
+    <mass value="0.018416700517789007"/>
+    <inertia ixx="5e-06" ixy="0.0" ixz="-0.0" iyy="5e-06" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.039 -0.002 -0.0175"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/cmc_link_v4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.039 -0.002 -0.0175"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/cmc_link_v4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="t_connector_1_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.007499999970143861 1.3128640535819969e-11 0.024250000000000008"/>
+    <mass value="0.00374307805216622"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.03825 -0.009 -0.0175"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/t_connector_1_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.03825 -0.009 -0.0175"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/t_connector_1_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="t_mcp_v5_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.007807400362975288 -0.0029362898569624957 -0.025333866891557685"/>
+    <mass value="0.03943050014537036"/>
+    <inertia ixx="1.1e-05" ixy="0.0" ixz="-0.0" iyy="1.3e-05" iyz="-0.0" izz="3e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.05325 -0.009 -0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/t_mcp_v5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.05325 -0.009 -0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/t_mcp_v5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="t_pip_link_v5_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.08450315797168514 0.009190616814845145 0.017499999999997472"/>
+    <mass value="0.03216718051096679"/>
+    <inertia ixx="2e-06" ixy="-1e-06" ixz="-0.0" iyy="7e-06" iyz="-0.0" izz="6e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.01 -0.002 -0.0085"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/t_pip_link_v5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.01 -0.002 -0.0085"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/t_pip_link_v5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="t_connector_2_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.11644669926025636 0.004946699154229534 0.050749999999999997"/>
+    <mass value="0.00374307805216622"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.009 0.0145"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/t_connector_2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.009 0.0145"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/t_connector_2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="t_tip_v2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0011409398218715228 -5.272418504998627e-07 -0.011500000000000003"/>
+    <mass value="0.011962131611831003"/>
+    <inertia ixx="1e-06" ixy="-0.0" ixz="0.0" iyy="1e-06" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.123947 -0.013947 -0.0375"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/t_tip_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.123947 -0.013947 -0.0375"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/t_tip_v2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="r_mcp_yaw_link_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-3.17280923756158e-14 0.001235978760725326 -0.0005366094686043502"/>
+    <mass value="0.011430485562037091"/>
+    <inertia ixx="2e-06" ixy="0.0" ixz="-0.0" iyy="3e-06" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.0195 -0.002 -0.0175"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/r_mcp_yaw_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.0195 -0.002 -0.0175"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/r_mcp_yaw_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="r_mcp_pitch_link_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.01993495690744278 0.007866616913173878 0.017581335461812227"/>
+    <mass value="0.028244047864773934"/>
+    <inertia ixx="6e-06" ixy="0.0" ixz="-0.0" iyy="6e-06" iyz="0.0" izz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.002 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/r_mcp_pitch_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.002 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/r_mcp_pitch_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="r_connector_1_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0215962513306326 0.004500000000000008 -0.005970797677186772"/>
+    <mass value="0.00374307805216622"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.007 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/r_connector_1_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.007 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/r_connector_1_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="r_pip_pitch_link_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.00043169002557639363 -0.0010075159640330796 -0.017995683521112665"/>
+    <mass value="0.03418494281236667"/>
+    <inertia ixx="8e-06" ixy="0.0" ixz="-0.0" iyy="9e-06" iyz="-0.0" izz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.020477 -0.0115 0.056491"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/r_pip_pitch_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.020477 -0.0115 0.056491"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/r_pip_pitch_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="r_connector_2_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.010488075564635466 0.0045000000000000205 -0.05716373280419147"/>
+    <mass value="0.00374307805216622"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.0005 -0.007 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/r_connector_2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.0005 -0.007 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/r_connector_2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="r_dip_link_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.011594415233927399 -0.0005341031947518234 -0.005298879077883789"/>
+    <mass value="0.019676387057467354"/>
+    <inertia ixx="1e-06" ixy="0.0" ixz="0.0" iyy="2e-06" iyz="0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.009869 -0.0115 0.107684"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/r_dip_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.009869 -0.0115 0.107684"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/r_dip_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="r_connector_3_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.010441990436848396 0.004500000000000052 -0.11517722528469497"/>
+    <mass value="0.00374307805216622"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.007 0.011"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/r_connector_3_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.007 0.011"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/r_connector_3_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="r_tip_link_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.012594177801296734 -0.0005341031947518095 -0.00528091915194992"/>
+    <mass value="0.019676387057467354"/>
+    <inertia ixx="1e-06" ixy="0.0" ixz="0.0" iyy="2e-06" iyz="0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.009323 -0.0115 0.133698"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/r_tip_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.009323 -0.0115 0.133698"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/r_tip_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="m_mcp_yaw_link_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-3.172582489701302e-14 0.001235978760725326 -0.0005366094686043502"/>
+    <mass value="0.011430485562037091"/>
+    <inertia ixx="2e-06" ixy="0.0" ixz="-0.0" iyy="3e-06" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.002 -0.0175"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/m_mcp_yaw_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.002 -0.0175"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/m_mcp_yaw_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="m_mcp_pitch_link_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.00043495690743421855 0.007866616913173875 0.017581335461812075"/>
+    <mass value="0.028244047864773934"/>
+    <inertia ixx="6e-06" ixy="-0.0" ixz="0.0" iyy="6e-06" iyz="0.0" izz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.002 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/m_mcp_pitch_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.002 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/m_mcp_pitch_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="m_connector_2_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0004033679072583855 0.0045 -0.006014428693279984"/>
+    <mass value="0.00374307805216622"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.007 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/m_connector_2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.007 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/m_connector_2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="m_pip_pitch_link_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0006971899754776661 -0.0010075159640330865 -0.0179910492022487"/>
+    <mass value="0.03418494281236667"/>
+    <inertia ixx="8e-06" ixy="0.0" ixz="0.0" iyy="9e-06" iyz="0.0" izz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.000977 -0.0115 0.056491"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/m_pip_pitch_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.000977 -0.0115 0.056491"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/m_pip_pitch_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="m_connector_1_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.012984877162919692 0.004500000000000008 -0.05679723226900847"/>
+    <mass value="0.00374307805216622"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.0005 -0.007 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/m_connector_1_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.0005 -0.007 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/m_connector_1_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="m_dip_link_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.011402699459372364 -0.000534103194751858 -0.005700153547398473"/>
+    <mass value="0.019676387057467354"/>
+    <inertia ixx="1e-06" ixy="0.0" ixz="-0.0" iyy="2e-06" iyz="0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.013866 -0.0115 0.107274"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/m_dip_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.013866 -0.0115 0.107274"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/m_dip_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="m_connector_3_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.012938639730289012 0.004500000000000017 -0.11479327234307456"/>
+    <mass value="0.00374307805216622"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.007 0.011"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/m_connector_3_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.007 0.011"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/m_connector_3_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="m_tip_link_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.01340163228231583 -0.000534103194751865 -0.005735098434339281"/>
+    <mass value="0.019676387057467354"/>
+    <inertia ixx="1e-06" ixy="0.0" ixz="-0.0" iyy="2e-06" iyz="0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.014319 -0.0115 0.13327"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/m_tip_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.014319 -0.0115 0.13327"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/m_tip_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="i_mcp_yaw_link_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="4.676859677003528e-05 0.001235978760725326 -0.0005345675075722547"/>
+    <mass value="0.011430485562037091"/>
+    <inertia ixx="2e-06" ixy="-0.0" ixz="0.0" iyy="3e-06" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0195 -0.002 -0.0175"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/i_mcp_yaw_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0195 -0.002 -0.0175"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/i_mcp_yaw_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="i_mcp_pitch_link_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.023240938912323234 0.007866616913173878 0.01774087257066125"/>
+    <mass value="0.028244047864773934"/>
+    <inertia ixx="6e-06" ixy="-0.0" ixz="0.0" iyy="6e-06" iyz="0.0" izz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.002 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/i_mcp_pitch_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.002 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/i_mcp_pitch_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="i_connector_1_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.024050613517502453 0.0045 -0.005855892071793108"/>
+    <mass value="0.00374307805216622"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.007 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/i_connector_1_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.007 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/i_connector_1_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="i_pip_pitch_link_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.001451544625967232 -0.0010075159640331264 -0.017942129496674945"/>
+    <mass value="0.03418494281236667"/>
+    <inertia ixx="8e-06" ixy="0.0" ixz="0.0" iyy="9e-06" iyz="0.0" izz="2e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.02595 -0.0115 0.056218"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/i_pip_pitch_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.02595 -0.0115 0.056218"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/i_pip_pitch_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="i_connector_2_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.040451795425688095 0.004499999999999941 -0.05565953063287406"/>
+    <mass value="0.00374307805216622"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.0005 -0.007 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/i_connector_2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.0005 -0.007 0.043"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/i_connector_2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="i_dip_link_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.01097719357645029 -0.0005341031947519448 -0.006481423439827494"/>
+    <mass value="0.019676387057467354"/>
+    <inertia ixx="1e-06" ixy="0.0" ixz="-0.0" iyy="2e-06" iyz="0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.041851 -0.0115 0.106022"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/i_dip_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.041851 -0.0115 0.106022"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/i_dip_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="i_connector_3_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0427159420861731 0.0044999999999999095 -0.11351701491188568"/>
+    <mass value="0.00374307805216622"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.007 0.011"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/i_connector_3_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.007 0.011"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/i_connector_3_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="i_tip_link_v1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.01097704691596521 -0.0005341031947519483 -0.006480907718839135"/>
+    <mass value="0.019676387057467354"/>
+    <inertia ixx="1e-06" ixy="0.0" ixz="-0.0" iyy="2e-06" iyz="0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.044615 -0.0115 0.13188"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/i_tip_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="steel_satin"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.044615 -0.0115 0.13188"/>
+    <geometry>
+      <mesh filename="package://hand_final_description/meshes/i_tip_link_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rigid1" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.039 0.002 0.0175"/>
+  <parent link="base_link"/>
+  <child link="s_mcp_yaw_link_v1_1"/>
+</joint>
+
+<joint name="s_mcp_yaw" type="continuous">
+  <origin rpy="0 0 0" xyz="0.039 0.0 -0.0605"/>
+  <parent link="s_mcp_yaw_link_v1_1"/>
+  <child link="s_mcp_pitch_link_v1_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="s_mcp_pitch" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0 0.005 0.0"/>
+  <parent link="s_mcp_pitch_link_v1_1"/>
+  <child link="connector_v1_1"/>
+  <axis xyz="-0.996195 0.0 0.087156"/>
+</joint>
+
+<joint name="Rigid4" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.04545 0.00425 -0.013218"/>
+  <parent link="connector_v1_1"/>
+  <child link="s_pip_pitch_link_v1_1"/>
+</joint>
+
+<joint name="s_pip_pitch" type="continuous">
+  <origin rpy="0 0 0" xyz="0.04495 -0.00425 0.013218"/>
+  <parent link="s_pip_pitch_link_v1_1"/>
+  <child link="connector_v1_2"/>
+  <axis xyz="0.996195 -0.0 -0.087156"/>
+</joint>
+
+<joint name="Rigid6" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.03744 0.00425 -0.06507"/>
+  <parent link="connector_v1_2"/>
+  <child link="s_dip_link_v1_1"/>
+</joint>
+
+<joint name="s_dip_pitch" type="continuous">
+  <origin rpy="0 0 0" xyz="0.03794 -0.00425 0.09707"/>
+  <parent link="s_dip_link_v1_1"/>
+  <child link="connector_v1_3"/>
+  <axis xyz="0.996195 -0.0 -0.087156"/>
+</joint>
+
+<joint name="Rigid8" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.040206 0.00425 -0.122971"/>
+  <parent link="connector_v1_3"/>
+  <child link="s_tip_link_v1_1"/>
+</joint>
+
+<joint name="Rigid9" type="fixed">
+  <origin rpy="0 0 0" xyz="0.039 0.002 0.0175"/>
+  <parent link="base_link"/>
+  <child link="cmc_link_v4_1"/>
+</joint>
+
+<joint name="t_mcp_pitch" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.00075 0.007 0.0"/>
+  <parent link="cmc_link_v4_1"/>
+  <child link="t_connector_1_v1_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="Rigid11" type="fixed">
+  <origin rpy="0 0 0" xyz="0.015 0.0 0.0255"/>
+  <parent link="t_connector_1_v1_1"/>
+  <child link="t_mcp_v5_1"/>
+</joint>
+
+<joint name="t_mcp_yaw" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.04325 -0.007 -0.0345"/>
+  <parent link="t_mcp_v5_1"/>
+  <child link="t_pip_link_v5_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="t_pip_pitch" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.01 0.007 -0.023"/>
+  <parent link="t_pip_link_v5_1"/>
+  <child link="t_connector_2_v1_1"/>
+  <axis xyz="0.0 -0.0 1.0"/>
+</joint>
+
+<joint name="Rigid16" type="fixed">
+  <origin rpy="0 0 0" xyz="0.123947 0.004947 0.052"/>
+  <parent link="t_connector_2_v1_1"/>
+  <child link="t_tip_v2_1"/>
+</joint>
+
+<joint name="Rigid17" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.0195 0.002 0.0175"/>
+  <parent link="base_link"/>
+  <child link="r_mcp_yaw_link_v1_1"/>
+</joint>
+
+<joint name="r_mcp_yaw " type="continuous">
+  <origin rpy="0 0 0" xyz="0.0195 0.0 -0.0605"/>
+  <parent link="r_mcp_yaw_link_v1_1"/>
+  <child link="r_mcp_pitch_link_v1_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="r_mcp_pitch " type="continuous">
+  <origin rpy="0 0 0" xyz="0.0 0.005 0.0"/>
+  <parent link="r_mcp_pitch_link_v1_1"/>
+  <child link="r_connector_1_v1_1"/>
+  <axis xyz="-0.999848 0.0 0.017452"/>
+</joint>
+
+<joint name="rev20" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.020477 0.0045 -0.013491"/>
+  <parent link="r_connector_1_v1_1"/>
+  <child link="r_pip_pitch_link_v1_1"/>
+</joint>
+
+<joint name="r_pip_pitch" type="continuous">
+  <origin rpy="0 0 0" xyz="0.019977 -0.0045 0.013491"/>
+  <parent link="r_pip_pitch_link_v1_1"/>
+  <child link="r_connector_2_v1_1"/>
+  <axis xyz="0.999848 -0.0 -0.017452"/>
+</joint>
+
+<joint name="Rigid22" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.009369 0.0045 -0.064684"/>
+  <parent link="r_connector_2_v1_1"/>
+  <child link="r_dip_link_v1_1"/>
+</joint>
+
+<joint name="r_dip_pitch" type="continuous">
+  <origin rpy="0 0 0" xyz="0.009869 -0.0045 0.096684"/>
+  <parent link="r_dip_link_v1_1"/>
+  <child link="r_connector_3_v1_1"/>
+  <axis xyz="0.999848 -0.0 -0.017452"/>
+</joint>
+
+<joint name="Rigid24" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.009323 0.0045 -0.122698"/>
+  <parent link="r_connector_3_v1_1"/>
+  <child link="r_tip_link_v1_1"/>
+</joint>
+
+<joint name="Rigid25" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.002 0.0175"/>
+  <parent link="base_link"/>
+  <child link="m_mcp_yaw_link_v1_1"/>
+</joint>
+
+<joint name="m_mcp_yaw" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0 0.0 -0.0605"/>
+  <parent link="m_mcp_yaw_link_v1_1"/>
+  <child link="m_mcp_pitch_link_v1_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="m_mcp_pitch" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0 0.005 0.0"/>
+  <parent link="m_mcp_pitch_link_v1_1"/>
+  <child link="m_connector_2_v1_1"/>
+  <axis xyz="-0.999848 0.0 -0.017452"/>
+</joint>
+
+<joint name="Rigid28" type="fixed">
+  <origin rpy="0 0 0" xyz="0.000977 0.0045 -0.013491"/>
+  <parent link="m_connector_2_v1_1"/>
+  <child link="m_pip_pitch_link_v1_1"/>
+</joint>
+
+<joint name="m_pip_pitch" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.001477 -0.0045 0.013491"/>
+  <parent link="m_pip_pitch_link_v1_1"/>
+  <child link="m_connector_1_v1_1"/>
+  <axis xyz="0.999848 0.0 0.017452"/>
+</joint>
+
+<joint name="Rigid32" type="fixed">
+  <origin rpy="0 0 0" xyz="0.014366 0.0045 -0.064274"/>
+  <parent link="m_connector_1_v1_1"/>
+  <child link="m_dip_link_v1_1"/>
+</joint>
+
+<joint name="m_dip_pitch" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.013866 -0.0045 0.096274"/>
+  <parent link="m_dip_link_v1_1"/>
+  <child link="m_connector_3_v1_1"/>
+  <axis xyz="0.999848 -0.0 0.017452"/>
+</joint>
+
+<joint name="Rigid34" type="fixed">
+  <origin rpy="0 0 0" xyz="0.014319 0.0045 -0.12227"/>
+  <parent link="m_connector_3_v1_1"/>
+  <child link="m_tip_link_v1_1"/>
+</joint>
+
+<joint name="Rigid35" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0195 0.002 0.0175"/>
+  <parent link="base_link"/>
+  <child link="i_mcp_yaw_link_v1_1"/>
+</joint>
+
+<joint name="i_mcp_yaw" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.0195 0.0 -0.0605"/>
+  <parent link="i_mcp_yaw_link_v1_1"/>
+  <child link="i_mcp_pitch_link_v1_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="i_mcp_pitch" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0 0.005 0.0"/>
+  <parent link="i_mcp_pitch_link_v1_1"/>
+  <child link="i_connector_1_v1_1"/>
+  <axis xyz="-0.996195 0.0 -0.087156"/>
+</joint>
+
+<joint name="Rigid38" type="fixed">
+  <origin rpy="0 0 0" xyz="0.02595 0.0045 -0.013218"/>
+  <parent link="i_connector_1_v1_1"/>
+  <child link="i_pip_pitch_link_v1_1"/>
+</joint>
+
+<joint name="i_pip_itch" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.02645 -0.0045 0.013218"/>
+  <parent link="i_pip_pitch_link_v1_1"/>
+  <child link="i_connector_2_v1_1"/>
+  <axis xyz="0.996195 0.0 0.087156"/>
+</joint>
+
+<joint name="Rigid40" type="fixed">
+  <origin rpy="0 0 0" xyz="0.042351 0.0045 -0.063022"/>
+  <parent link="i_connector_2_v1_1"/>
+  <child link="i_dip_link_v1_1"/>
+</joint>
+
+<joint name="i_dip_pitch" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.041851 -0.0045 0.095022"/>
+  <parent link="i_dip_link_v1_1"/>
+  <child link="i_connector_3_v1_1"/>
+  <axis xyz="0.996195 -0.0 0.087156"/>
+</joint>
+
+<joint name="Rigid42" type="fixed">
+  <origin rpy="0 0 0" xyz="0.044615 0.0045 -0.12088"/>
+  <parent link="i_connector_3_v1_1"/>
+  <child link="i_tip_link_v1_1"/>
+</joint>
+
+</robot>
