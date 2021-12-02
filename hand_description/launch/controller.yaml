@@ -1,0 +1,83 @@
+hand_controller:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers --------------------------------------
+  t_mcp_pitch_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: t_mcp_pitch
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  t_mcp_yaw_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: t_mcp_yaw
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  t_pip_pitch_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: t_pip_pitch
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  i_mcp_yaw_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: i_mcp_yaw
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  i_mcp_pitch_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: i_mcp_pitch
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  i_pip_pitch_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: i_pip_pitch
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  i_dip_pitch_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: i_dip_pitch
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  m_mcp_yaw_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: m_mcp_yaw
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  m_mcp_pitch_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: m_mcp_pitch
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  m_pip_pitch_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: m_pip_pitch
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  m_dip_pitch_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: m_dip_pitch
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  r_mcp_yaw_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: r_mcp_yaw
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  r_mcp_pitch_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: r_mcp_pitch
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  r_pip_pitch_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: r_pip_pitch
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  r_dip_pitch_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: r_dip_pitch
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  s_mcp_yaw_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: s_mcp_yaw
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  s_mcp_pitch_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: s_mcp_pitch
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  s_pip_pitch_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: s_pip_pitch
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  s_dip_pitch_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: s_dip_pitch
+    pid: {p: 100.0, i: 0.01, d: 10.0}
