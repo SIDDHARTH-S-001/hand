@@ -1,0 +1,9 @@
+<launch>
+
+<rosparam file="$(find hand__description)/launch/controller.yaml" command="load"/>
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="hand_" args="t_mcp_pitch_position_controller t_mcp_yaw_position_controller t_pip_pitch_position_controller i_mcp_yaw_position_controller i_mcp_pitch_position_controller i_pip_pitch_position_controller i_dip_pitch_position_controller m_mcp_yaw_position_controller m_mcp_pitch_position_controller m_pip_pitch_position_controller m_dip_pitch_position_controller r_mcp_yaw_position_controller r_mcp_pitch_position_controller r_pip_pitch_position_controller r_dip_pitch_position_controller s_mcp_yaw_position_controller s_mcp_pitch_position_controller s_pip_pitch_position_controller s_dip_pitch_position_controller joint_state_controller "/>
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+  <remap from="/joint_states" to="/hand_/joint_states"/>
+</node>
+
+</launch>
